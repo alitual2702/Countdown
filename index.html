@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown</title>
+</head>
+<body>
+    <div class="main">
+        <div class="title-main">
+            <h1>CountDown</h1>
+            <p> October 4 , 2030</p>
+        </div>
+        <div class="days box">
+            <label for="alldays">Days</label>
+            <input type="text" id="alldays" value="0" readonly>
+        </div>
+        <div class="hours box">
+            <label for="allhours">Hours</label>
+            <input type="text" id="allhours" value="0" readonly>
+        </div>
+        <div class="minutes box">
+            <label for="allminutes">Minutes</label>
+            <input type="text" id="allminutes" value="0" readonly>
+        </div>
+        <div class="seconds box">
+            <label for="allseconds">Seconds</label>
+            <input type="text" id="allseconds" value="0" readonly>
+        </div>
+    </div>
+
+
+    <script>
+     const targetday = document.querySelector('p')
+     const days = document.querySelector('#alldays')
+     const hours = document.querySelector('#allhours')
+     const minutes = document.querySelector('#allminutes')
+     const seconds = document.querySelector('#allseconds')
+    
+    function countDown(target){
+    let endDay = new Date(target)
+    let currentDay = new Date();
+    let difference = (endDay - currentDay) /1000; //calculate the difference-miliseconds and then convert into seconds
+   
+    if(difference < 0)//if time is past then function will return 
+    {
+        alert("Invalid Counter...")
+    }else{
+     //Calculation of Days, hours , minutes and seconds
+    days.value = Math.floor(difference / (60*60*24))
+    hours.value = Math.floor((difference % (60 * 60 * 24)) /(60*60))
+    minutes.value = Math.floor( difference % (60*60) / 60)
+    seconds.value = Math.floor(difference % 60)
+    }
+    }
+    // PAK VS IND Match Countdown....
+    setInterval(() => {countDown('October 4 , 2030 12:00:00') }, 1000)
+    
+    </script>
+</body>
+</html>

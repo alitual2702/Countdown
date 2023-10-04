@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    height: 100vh;
+    background-image: url(cont.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.title-main{
+    position: absolute;
+    top: 0%;
+    text-align: center;
+
+}
+.title-main h1 {
+    font-size: 6vmax;
+    margin: 10px 0px;
+    letter-spacing: 5px;
+}
+.title-main p{
+    font-size: 3vmax;
+    text-shadow: 1px 1px 15px rgb(2, 2, 2);
+}
+.main{
+    width: 60vmax;
+    height: 10vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px;
+}
+.box{
+    width: 12vmax;
+    height: 10vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+label {
+    letter-spacing: 1px;
+    font-size: 2.2vmax;
+    margin-bottom: 10px;
+}
+#alldays , #allhours , #allminutes , #allseconds{
+    width: 8vmax;
+    height: 6vmax;
+    font-size: 3vmax;
+    text-align: center;
+    padding: 3px 0px;
+    border: none;
+    color: white;
+    background-color: rgba(119, 119, 119, 0.5);
+   outline: none;
+
+}
+.days , .minutes , .hours , .seconds{
+    box-shadow:inset 0px 1px 35px rgb(60, 60, 60);
+    border: 0.05vmax solid white;
+    padding: 15px;
+}
+@media (max-width : 480px) {
+    .main{
+        flex-direction: column;
+    }
+    
+    .box{
+        box-shadow: none;
+        border: none;
+        padding: 40px;
+    }
+    #alldays , #allhours , #allminutes , #allseconds{
+        width: 100em;
+        font-size:4.5vmax;
+        padding: 25px 0px;
+    }
+    label{
+        font-size: 4vmax;
+    }
+    .days , .minutes , .hours , .seconds{
+        padding: 55px;
+    }
+}
